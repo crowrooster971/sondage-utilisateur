@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sondage Utilisateur</title>
+</head>
+<body>
+    <h1>Sondages</h1>
+    <form action="/creer-sondage" method="POST">
+        <input type="text" name="question" placeholder="Votre question" required>
+        <button type="submit">Créer Sondage</button>
+    </form>
+    <ul>
+        <% sondages.forEach(function(sondage) { %>
+            <li><%= sondage.question %> - Votes: <%= sondage.votes %></li>
+        <% }); %>
+    </ul>
+</body>
+</html>
