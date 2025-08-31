@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 // Handle POST request to create a new poll
 app.post('/creer-sondage', (req, res) => {
     const { question } = req.body;
+    // Add the new poll to the sondages array with zero votes
     sondages.push({ question: question, votes: 0 });
     res.redirect('/');
 });
